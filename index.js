@@ -8,7 +8,7 @@ import { UserController, TripController, BookingController } from './controllers
 import { checkAuth, handleValidationErrors } from './utils/index.js';
 
 mongoose
-  .connect('mongodb+srv://root:root@cluster0.lb5t2d5.mongodb.net/travel?retryWrites=true&w=majority')
+  .connect(process.env.MONGODB_URL)
   .then(() => console.log('Connected to DB'))
   .catch((error) => console.log(error));
 
